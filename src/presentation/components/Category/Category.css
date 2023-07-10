@@ -1,0 +1,51 @@
+.category-header {
+    text-align: center;
+    color: var(--font-color, #333);
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.category-desc {
+    text-align: center;
+    color: var(--font-color-1, #666);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0;
+}
+
+.list {
+    text-align: center;
+}
+
+.list-item {
+    align-content: center;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.item {
+    display: inline-block;
+    flex-shrink: 1;
+}
+
+.item-image {
+    width: 381px;
+    height: 480px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.item-title {
+    color: var(--font-color, #333);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
