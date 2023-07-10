@@ -5,7 +5,7 @@ import './Header.css';
 export function Header() {
     return (
         <div className="header">
-            <Link to="/" class="logo">CompanyLogo</Link>
+            <Link to="/" className="logo">CompanyLogo</Link>
             <div className="header-right">
                 <Link className="active" to="/">Home</Link>
                 <Link to="/shop">Shop</Link>
