@@ -1,6 +1,6 @@
 .home-banner {
     height: 1007.93px;
-    left: 0px;
+    /* left: 0px; */
     background-image: url(../../assets/images/homeBanner.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,8 +10,8 @@
 .banner-detail {
     position: absolute;
     right: 58px;
-    margin-top: auto;
-    margin-bottom: auto;
+    display: block;
+    margin-top: 25%;
     border-radius: 10px;
     flex-shrink: 0;
     background-color: #FFF3e3;
@@ -49,12 +49,12 @@
 }
 
 .detail-content {
-    display: flex;
+    display: inline-block;
     width: 546px;
     height: 52px;
-    /* flex-direction: column; */
+    flex-direction: column;
     flex-shrink: 0;
-    /* max-lines: 2; */
+    max-lines: 2;
 
     color: var(--font-color, #333);
     font-family: Poppins;
@@ -65,7 +65,8 @@
 }
 
 .detail-button {
-    display: inline-flex;
+    display: flex;
+    margin-top: 46px;
     padding: 25px 72px;
     align-items: flex-start;
     gap: 10px;

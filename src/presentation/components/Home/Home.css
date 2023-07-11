@@ -1,0 +1,24 @@
+.product-header {
+    color: var(--color-gray-1, #3A3A3A);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.product-item {
+    align-content: center;
+    display: inline-block;
+    margin: 16px 10px;
+    background-color: #F4F5F7;
+}
+
+.product-item:hover {
+    background-color: #898989;
+}
+
+.product-list {
+    text-align: center;
+}

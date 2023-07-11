@@ -1,0 +1,73 @@
+.product-image {
+    position: static;
+    width: 285px;
+    height: 301px;
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.product-name {
+    color: var(--color-gray-1, #3A3A3A);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.product-description {
+    color: var(--color-gray-3, #898989);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.product-status {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 48px;
+    width: 48px;
+    background-color: var(--color-red-accents, #E97171);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.product-text-status {
+    color: var(--color-white, #FFF);
+    font-family: Poppins;
+    font-size: 16px;    
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    padding-top: 12px;
+}
+
+.product-price {
+    color: var(--color-gray-1, #3A3A3A);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.product-base-price {
+    color: var(--color-gray-4, #B0B0B0);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* text-decoration-line: strikethrough; */
+    text-decoration: line-through
+}
+
+.product-detail {
+    text-align: left;
+    padding: 16px 16px 30px 16px;
+}
+
