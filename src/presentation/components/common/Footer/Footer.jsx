@@ -11,10 +11,10 @@ export function Footer() {
                         <div className="address">400 University Drive Suite 200 Coral Gables,<br /> FL 33134 USA</div>
                     </div>
                     <ul className="link">
-                        <li className="field" style={{ marginRight: "140px" }}>
+                        <li className="field" style={{ marginRight: "100px" }}>
                             <InfoField title="Links" children={<LinkOptions />} />
                         </li>
-                        <li className="field" style={{ marginRight: "140px" }}>
+                        <li className="field" style={{ marginRight: "100px" }}>
                             <InfoField title="Helps" children={<HelpOptions />} />
                         </li>
                         <li className="field">

@@ -11,10 +11,13 @@ class ProductCard extends React.Component {
     render() {
         return (
             <>
-                <ProductImage imageSrc={this.props.product.imageSrc} name={this.props.product.name} status={this.props.product.status.isNew ? "New" : this.props.product.status.discount} />
-                <ProductDetail name={this.props.product.name} description={this.props.product.describe}
-                    price={this.props.product.price} basePrice={this.props.product.basePrice} currency={this.props.product.currency}
-                />
+                <div>
+                    <ProductHover />
+                    <ProductImage imageSrc={this.props.product.imageSrc} name={this.props.product.name} status={this.props.product.status.isNew ? "New" : this.props.product.status.discount} />
+                    <ProductDetail name={this.props.product.name} description={this.props.product.describe}
+                        price={this.props.product.price} basePrice={this.props.product.basePrice} currency={this.props.product.currency}
+                    />
+                </div>
             </>
         );
     }
@@ -53,6 +56,16 @@ function ProductDetail({ name, description, price, basePrice, currency }) {
                 <div className="product-name">{name}</div>
                 <div className="product-description">{description}</div>
                 <div className="product-price">{currency} {price} {(basePrice !== price) && <span className="product-base-price">{currency} {basePrice}</span>}</div>
+            </div>
+        </>
+    );
+}
+
+function ProductHover() {
+    return (
+        <>
+            <div className="product-hover">
+                as
             </div>
         </>
     );
