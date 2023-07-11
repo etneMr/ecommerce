@@ -18,6 +18,11 @@ import ImageProduct7 from '../assets/images/product7.png';
 import ImageProduct8 from '../assets/images/product8.png';
 import ImageProduct9 from '../assets/images/product9.png';
 
+import IconProfile from '../assets/icons/profile.png';
+import IconFavorite from '../assets/icons/favorite.png';
+import IconCart from '../assets/icons/cart.png';
+import IconSearch from '../assets/icons/search.png';
+
 
 export {
     ImageLogo,
@@ -36,5 +41,9 @@ export {
     ImageProduct6,
     ImageProduct7,
     ImageProduct8,
-    ImageProduct9
+    ImageProduct9,
+    IconProfile,
+    IconFavorite,
+    IconCart,
+    IconSearch
 }
