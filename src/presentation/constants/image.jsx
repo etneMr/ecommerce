@@ -22,6 +22,9 @@ import IconProfile from '../assets/icons/profile.png';
 import IconFavorite from '../assets/icons/favorite.png';
 import IconCart from '../assets/icons/cart.png';
 import IconSearch from '../assets/icons/search.png';
+import IconHeart from '../assets/icons/heart.png';
+import IconShare from '../assets/icons/share.png';
+import IconCompare from '../assets/icons/compare.png';
 
 
 export {
@@ -45,5 +48,8 @@ export {
     IconProfile,
     IconFavorite,
     IconCart,
-    IconSearch
+    IconSearch,
+    IconCompare,
+    IconHeart,
+    IconShare
 }

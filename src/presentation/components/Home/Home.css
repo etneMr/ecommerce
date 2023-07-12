@@ -13,6 +13,7 @@
     display: inline-block;
     margin: 16px 10px;
     background-color: #F4F5F7;
+    position: relative;
 }
 
 /* .product-item:hover {

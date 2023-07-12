@@ -43,7 +43,7 @@ function TitleCategory() {
 function ListCategory(props) {
     return (
         props.listProducts.length ?
-            <ul className="list">
+            <ul id="list">
                 {props.listProducts.map((product) => (
                     <li className="list-item" key={product.id}>
                         <ItemCategory imageSrc={product.imageSrc} title={product.title} />
@@ -57,7 +57,7 @@ function ListCategory(props) {
 function ItemCategory({ imageSrc, title }) {
     return (
         <>
-            <div className="item">
+            <div className="category-item">
                 <img className="item-image" src={imageSrc} alt={title} />
                 <p className="item-title">{title}</p>
             </div>

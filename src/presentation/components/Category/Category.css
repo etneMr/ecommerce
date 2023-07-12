@@ -18,17 +18,17 @@
     line-height: 0;
 }
 
-.list {
+#list {
     text-align: center;
+
+    .list-item {
+        align-content: center;
+        display: inline-block;
+        margin: 0px 10px;
+    }
 }
 
-.list-item {
-    align-content: center;
-    display: inline-block;
-    margin: 0px 10px;
-}
-
-.item {
+.category-item {
     display: inline-block;
     flex-shrink: 1;
 }

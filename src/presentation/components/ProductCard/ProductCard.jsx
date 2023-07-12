@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import './ProductCard.css'
+import {
+    IconCompare,
+    IconHeart,
+    IconShare
+} from "../../constants";
 
 class ProductCard extends React.Component {
     // eslint-disable-next-line no-useless-constructor
@@ -11,12 +16,12 @@ class ProductCard extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <ProductHover />
+                <div id="product-item">
                     <ProductImage imageSrc={this.props.product.imageSrc} name={this.props.product.name} status={this.props.product.status.isNew ? "New" : this.props.product.status.discount} />
                     <ProductDetail name={this.props.product.name} description={this.props.product.describe}
                         price={this.props.product.price} basePrice={this.props.product.basePrice} currency={this.props.product.currency}
                     />
+                    <ProductHover />
                 </div>
             </>
         );
@@ -64,8 +69,23 @@ function ProductDetail({ name, description, price, basePrice, currency }) {
 function ProductHover() {
     return (
         <>
-            <div className="product-hover">
-                as
+            <div id="product-hover">
+                <button className="product-add">
+                    <div className="add-text">
+                        Add to cart
+                    </div>
+                </button>
+                <div className="product-action">
+                    <div className="action-option">
+                        <img src={IconShare} alt="share" style={{display: "inline", width:"16px"}}/> Share
+                    </div>
+                    <div className="action-option">
+                        <img src={IconCompare} alt="compare" style={{display: "inline", width:"16px"}}/> Compare
+                    </div>
+                    <div className="action-option">
+                        <img src={IconHeart} alt="heart" style={{display: "inline", width:"16px"}}/> Like
+                    </div>
+                </div>
             </div>
         </>
     );

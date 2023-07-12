@@ -11,7 +11,7 @@ import {
 
 export function Header() {
     return (
-        <div className="header">
+        <div id="header">
             <Link to="/" id="logo">
                 <img src={ImageLogo} alt="logo" className="image" />
                 <div className="name">Furniro</div>
