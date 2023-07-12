@@ -7,20 +7,18 @@ export function Footer() {
             <div className="footer">
                 <div className="contact">
                     <div className="footer-detail">
-                        <h2>Funiro.</h2>
+                        <h2 style={{ margin: 0 }}>Funiro.</h2>
                         <div className="address">400 University Drive Suite 200 Coral Gables,<br /> FL 33134 USA</div>
                     </div>
-                    <ul className="link">
-                        <li className="field" style={{ marginRight: "100px" }}>
-                            <InfoField title="Links" children={<LinkOptions />} />
-                        </li>
-                        <li className="field" style={{ marginRight: "100px" }}>
-                            <InfoField title="Helps" children={<HelpOptions />} />
-                        </li>
-                        <li className="field">
-                            <InfoField title="Newsletter" children={<EmailField />} />
-                        </li>
-                    </ul>
+                    <div className="field">
+                        <InfoField title="Links" children={<LinkOptions />} />
+                    </div>
+                    <div className="field">
+                        <InfoField title="Helps" children={<HelpOptions />} />
+                    </div>
+                    <div className="email-field">
+                        <InfoField title="Newsletter" children={<EmailField />} />
+                    </div>
 
                 </div>
                 <div className="article">2023 furino. All rights reverved</div>
