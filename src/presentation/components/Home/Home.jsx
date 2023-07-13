@@ -30,15 +30,16 @@ class Home extends React.Component {
 
 export default Home;
 
-
 function OurProduct() {
     return (
         <>
             <div className="product-header">Our Products</div>
             <ListProducts listProducts={listProducts} />
-            <button className="product-showMore">
-                <div className="showMore-text">Show More</div>
-            </button>
+            <div id="product-showMore-comp">
+                <button className="product-showMore">
+                    <div className="showMore-text">Show More</div>
+                </button>
+            </div>
         </>
     )
 }
@@ -57,7 +58,6 @@ export function ListProducts(props) {
         </>
     )
 }
-
 
 const listProducts = [
     {

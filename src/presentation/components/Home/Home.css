@@ -24,6 +24,11 @@
     text-align: center;
 }
 
+#product-showMore-comp {
+    display: flex;
+    justify-content: center;
+}
+
 .product-showMore {
     /* display: flex; */
     text-align: center;
