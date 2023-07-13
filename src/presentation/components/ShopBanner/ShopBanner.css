@@ -1,0 +1,62 @@
+#shop-banner {
+    height: 316px;
+
+    background-image: url(../../assets/images/product2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+}
+
+#shop-banner .shop-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    filter: none;
+}
+
+#shop-banner .shop-home {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    filter: none;
+    font-weight: 500;
+    line-height: normal;
+
+    display: flex;
+    align-content: center;
+}
+
+#shop-banner .shop-dash {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    filter: none;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#shop-banner .shop-shop {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+#shop-banner .blur-div {
+    backdrop-filter: blur(3px);
+    height: 316px;
+    align-self: stretch;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+}

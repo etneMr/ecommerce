@@ -23,3 +23,21 @@
 .product-list {
     text-align: center;
 }
+
+.product-showMore {
+    /* display: flex; */
+    text-align: center;
+    border: 1px solid var(--primary, #B88E2F);
+    background: #FFF;
+    padding: 12px 84px;
+    margin-bottom: 69px;
+}
+
+.showMore-text {
+    color: var(--primary, #B88E2F);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}

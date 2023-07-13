@@ -22,7 +22,7 @@ class Home extends React.Component {
             <>
                 <Banner />
                 <Category />
-                <OurProduct/>
+                <OurProduct />
                 <Footer />
             </>
         );
@@ -43,14 +43,19 @@ function OurProduct() {
 
 function ListProducts(props) {
     return (
-        props.listProducts.length ?
-            <ul className="product-list">
-                {props.listProducts.map((product) =>
-                    <li className="product-item" key={product.id}>
-                        <ProductCard product= {product} id = {product.id}/>
-                    </li>
-                )}
-            </ul> : <></>
+        <>
+            {props.listProducts.length ?
+                <ul className="product-list">
+                    {props.listProducts.map((product) =>
+                        <li className="product-item" key={product.id}>
+                            <ProductCard product={product} id={product.id} />
+                        </li>
+                    )}
+                </ul> : <></>}
+            <button className="product-showMore">
+                <div className="showMore-text">Show More</div>
+            </button>
+        </>
     )
 }
 
