@@ -1,0 +1,44 @@
+#shop-filter {
+    padding: 22px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: wrap row;
+    background: #F9F1E7;
+}
+
+#shop-filter .filter-detail {
+    border-left: 1px solid #9F9F9F;
+    padding-left: 34px;
+}
+
+#shop-filter .field-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 17px;
+}
+
+#shop-filter .field-border {
+    color: #9F9F9F;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background: #FFF;
+}
+
+#shop-filter .filter-right {
+    display: inline-flex;
+    align-items: center;
+}
+
+#shop-filter .filter-left {
+    display: inline-flex;
+    align-items: center;
+}
