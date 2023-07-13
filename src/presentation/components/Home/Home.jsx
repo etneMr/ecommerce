@@ -10,8 +10,7 @@ import {
     ImageProduct5,
     ImageProduct6,
     ImageProduct7,
-    ImageProduct8,
-    ImageProduct9
+    ImageProduct8
 } from "../../constants";
 import ProductCard from "../ProductCard/ProductCard";
 import './Home.css';
@@ -37,11 +36,14 @@ function OurProduct() {
         <>
             <div className="product-header">Our Products</div>
             <ListProducts listProducts={listProducts} />
+            <button className="product-showMore">
+                <div className="showMore-text">Show More</div>
+            </button>
         </>
     )
 }
 
-function ListProducts(props) {
+export function ListProducts(props) {
     return (
         <>
             {props.listProducts.length ?
@@ -52,9 +54,6 @@ function ListProducts(props) {
                         </li>
                     )}
                 </ul> : <></>}
-            <button className="product-showMore">
-                <div className="showMore-text">Show More</div>
-            </button>
         </>
     )
 }
