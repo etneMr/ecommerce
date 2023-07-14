@@ -6,8 +6,31 @@ import {
     ImageProduct5,
     ImageProduct6,
     ImageProduct7,
-    ImageProduct8
+    ImageProduct8,
+
+    MainImage,
+    MainImage2
 } from "./index";
+
+export const listShoppingProducts = [
+    {
+        name: "Asgaard sofa",
+        price: 2500000,
+        quantity: 1,
+        currency: "Rp",
+        imageSrc: MainImage,
+        id: "product-99",
+    },
+    {
+        name: "Casaliving Wood",
+        price: 2500000,
+        quantity: 1,
+        currency: "Rp",
+        imageSrc: MainImage2,
+        id: "product-100",
+    },
+
+]
 
 export const listRelatedProducts = [
     {
