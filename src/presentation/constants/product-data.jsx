@@ -9,6 +9,58 @@ import {
     ImageProduct8
 } from "./index";
 
+export const listRelatedProducts = [
+    {
+        name: "Syltherine",
+        describe: "Stylish cafe chair",
+        price: 2500000,
+        basePrice: 3500000,
+        currency: "Rp",
+        status: {
+            isNew: false,
+            discount: 0.3,
+        },
+        imageSrc: ImageProduct1,
+        id: "product-1",
+    },
+    {
+        name: "Leviosa",
+        describe: "Stylish cafe chair",
+        price: 2500000,
+        basePrice: 2500000,
+        currency: "Rp",
+        status: {
+            isNew: false,
+            discount: undefined,
+        },
+        imageSrc: ImageProduct2,
+        id: "product-2",
+    }, {
+        name: "Lolito",
+        describe: "Luxury big sofa",
+        price: 7000000,
+        basePrice: 14000000,
+        currency: "Rp",
+        status: {
+            isNew: false,
+            discount: 0.5,
+        },
+        imageSrc: ImageProduct3,
+        id: "product-3",
+    }, {
+        name: "Respira",
+        describe: "Outdoor bar table and stool",
+        price: 500000,
+        basePrice: 500000,
+        currency: "Rp",
+        status: {
+            isNew: true,
+            discount: undefined,
+        },
+        imageSrc: ImageProduct4,
+        id: "product-4",
+    }];
+
 export const listProducts = [
     {
         name: "Syltherine",
