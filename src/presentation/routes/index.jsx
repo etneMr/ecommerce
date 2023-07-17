@@ -4,6 +4,7 @@ import Contact from '../components/Contact/Contact'
 import About from '../components/About/About'
 import ErrorPage from '../components/Error/Error'
 import Product from '../components/Product/Product'
+import Cart from '../components/Cart/Cart'
 import { ProductComparison } from '../components/ProductComparison/Productcomparison'
 import {
     createBrowserRouter,
@@ -47,6 +48,11 @@ export const router = createBrowserRouter(
         {
             path: '/product-compare/:productId',
             element: <ProductComparison />,
+            errorElement: <ErrorPage />
+        },
+        {
+            path: '/cart',
+            element: <Cart />,
             errorElement: <ErrorPage />
         },
     ]
