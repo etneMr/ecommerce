@@ -16,7 +16,7 @@ export function Header() {
         refBackground.current.style.visibility = "visible";
     }
 
-    function callbackClose(){
+    function callbackClose() {
         ref.current.style.visibility = "hidden";
         refBackground.current.style.visibility = "hidden";
     }
@@ -96,7 +96,8 @@ function ShoppingCart({ listProducts, callBack }) {
     );
 
     return (
-        <>            <div className="shopping-cart-top">
+        <>            
+        <div className="shopping-cart-top">
             <table>
                 <tbody>
                     <tr>
@@ -110,7 +111,7 @@ function ShoppingCart({ listProducts, callBack }) {
                             </svg>
                         </td>
                     </tr>
-                    <td className="shopping-cart-devider"></td>
+                    <tr className="shopping-cart-devider"></tr>
                     {rows}
                 </tbody>
             </table>

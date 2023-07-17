@@ -1,0 +1,35 @@
+#shop-bottom-banner {
+    padding: 100px 0px;
+    display: flex;
+    /* flex-flow: wrap column; */
+    align-items: center;
+    background: #FAF3EA;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#shop-bottom-banner .certificate-title {
+    color: #242424;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 37.5px */
+}
+
+#shop-bottom-banner .certificate-des {
+    color: var(--color-gray-3, #898989);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 30px */
+}
+
+#shop-bottom-banner .certificate{
+    display: flex;
+}

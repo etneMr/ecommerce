@@ -21,7 +21,103 @@ export const listShoppingProducts = [
         imageSrc: MainImage,
         id: "product-99",
         views: 204,
-        star: 4.7
+        star: 4.7,
+        info: {
+            general: {
+                name: "General",
+                value: [
+                    {
+                        name: "Sales Package",
+                        value: "1 sectional sofa"
+                    },
+                    {
+                        name: "Model Number",
+                        value: "TFCBLIGRBL6SRHS"
+                    }, {
+                        name: "Secondary Material",
+                        value: "Solid Wood"
+                    }, {
+                        name: "Configuration",
+                        value: "L-shaped"
+                    }, {
+                        name: "Upholstery Material",
+                        value: "Fabric + Cotton"
+                    }, {
+                        name: "Upholstery Color",
+                        value: "Fabric + Cotton"
+                    },
+                ],
+            },
+            product: {
+                name: "Product",
+                value: [
+                    {
+                        name: "Filling Material",
+                        value: "Foam"
+                    },
+                    {
+                        name: "Finish Type",
+                        value: "Bright Grey & Lion"
+                    }, {
+                        name: "Adjustable Headrest",
+                        value: "No"
+                    }, {
+                        name: "Maximum Load Capacity",
+                        value: "280 KG"
+                    }, {
+                        name: "Origin of Manufacture",
+                        value: "India"
+                    }
+                ],
+            },
+            dimensions: {
+                name: "Dimensions",
+                value: [
+                    {
+                        name: "Width",
+                        value: "265.32 cm"
+                    },
+                    {
+                        name: "Height",
+                        value: "76 cm"
+                    }, {
+                        name: "Depth",
+                        value: "167.76 cm"
+                    }, {
+                        name: "Weight",
+                        value: "45 KG"
+                    }, {
+                        name: "Seat Height",
+                        value: "41.52 cm"
+                    }, {
+                        name: "Leg Height",
+                        value: "5.46 cm"
+                    },
+                ],
+            },
+            warranty: {
+                name: "Warranty",
+                value: [
+                    {
+                        name: "Warranty Summary",
+                        value: "1 Year Manufacturing Warranty"
+                    },
+                    {
+                        name: "Warranty Service Type",
+                        value: "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com"
+                    }, {
+                        name: "Covered in Warranty",
+                        value: "Warranty Against Manufacturing Defect"
+                    }, {
+                        name: "Not Covered in Warranty",
+                        value: "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage."
+                    }, {
+                        name: "Domestic Warranty",
+                        value: "1 Year"
+                    }
+                ]
+            }
+        }
     },
     {
         name: "Casaliving Wood",
@@ -31,9 +127,104 @@ export const listShoppingProducts = [
         imageSrc: MainImage2,
         id: "product-100",
         views: 145,
-        star: 4.2
-    },
-
+        star: 4.2,
+        info: {
+            general: {
+                name: "General",
+                value: [
+                    {
+                        name: "Sales Package",
+                        value: "1 Three Seater, 2 Single Seater"
+                    },
+                    {
+                        name: "Model Number",
+                        value: "DTUBLIGRBL568"
+                    }, {
+                        name: "Secondary Material",
+                        value: "Solid Wood"
+                    }, {
+                        name: "Configuration",
+                        value: "L-shaped"
+                    }, {
+                        name: "Upholstery Material",
+                        value: "Fabric + Cotton"
+                    }, {
+                        name: "Upholstery Color",
+                        value: "Bright Grey & Lion"
+                    },
+                ],
+            },
+            product: {
+                name: "Product",
+                value: [
+                    {
+                        name: "Filling Material",
+                        value: "Matte"
+                    },
+                    {
+                        name: "Finish Type",
+                        value: "Bright Grey & Lion"
+                    }, {
+                        name: "Adjustable Headrest",
+                        value: "yes"
+                    }, {
+                        name: "Maximum Load Capacity",
+                        value: "300 KG"
+                    }, {
+                        name: "Origin of Manufacture",
+                        value: "India"
+                    }
+                ],
+            },
+            dimensions: {
+                name: "Dimensions",
+                value: [
+                    {
+                        name: "Width",
+                        value: "265.32 cm"
+                    },
+                    {
+                        name: "Height",
+                        value: "76 cm"
+                    }, {
+                        name: "Depth",
+                        value: "167.76 cm"
+                    }, {
+                        name: "Weight",
+                        value: "65 KG"
+                    }, {
+                        name: "Seat Height",
+                        value: "41.52 cm"
+                    }, {
+                        name: "Leg Height",
+                        value: "5.46 cm"
+                    },
+                ],
+            },
+            warranty: {
+                name: "Warranty",
+                value: [
+                    {
+                        name: "Warranty Summary",
+                        value: "1.2 Year Manufacturing Warranty"
+                    },
+                    {
+                        name: "Warranty Service Type",
+                        value: "For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com"
+                    }, {
+                        name: "Covered in Warranty",
+                        value: "Warranty of the product is limited to manufacturing defects only."
+                    }, {
+                        name: "Not Covered in Warranty",
+                        value: "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage."
+                    }, {
+                        name: "Domestic Warranty",
+                        value: "3 Months"
+                    }
+                ]
+            }
+        }
+    }
 ]
 
 export const listRelatedProducts = [

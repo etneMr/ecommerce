@@ -1,5 +1,6 @@
 #product-comparison {
     margin: 0px 54px;
+    margin-bottom: 100px;
     table-layout: fixed;
     /* width: 95%; */
 }
@@ -23,11 +24,35 @@
     font-style: normal;
     font-weight: 500;
     line-height: 126.5%;
-    margin-top: 54px
-        /* 35.42px */
+    padding-top: 42px;
+    padding-bottom: 18px;
+    /* 35.42px */
 }
 
+#product-comparison .content-text {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126.5%;
+    padding-bottom: 34px;
+    /* 25.3px */
+}
 
+#product-comparison .add-button {
+    background: var(--primary, #B88E2F);
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 17px 48px;
+
+    width: fit-content;
+    block-size: fit-content;
+}
 
 #product-comparison .view-more {
     color: #727272;

@@ -2,7 +2,7 @@ import React from "react";
 import './CommonBanner.css';
 import { ImageLogo } from "../../../constants";
 
-export default function CommonBanner({ pageName }) {
+export function CommonBanner({ pageName }) {
     return (
         <div id="common-banner">
             <div className="blur-div">

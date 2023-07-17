@@ -1,9 +1,8 @@
 import React from "react";
 import './ProductComparison.css';
-import { Header, Footer } from "../common";
-import CommonBanner from "../common/CommonBanner/CommonBanner";
 import { listShoppingProducts } from "../../constants";
 import { ProductStat } from "../ProductComponent/ProductComponent";
+import { Footer, Header, CertificateBanner, CommonBanner } from "../common";
 
 export class ProductComparison extends React.Component {
     render() {
@@ -12,6 +11,7 @@ export class ProductComparison extends React.Component {
                 <Header />
                 <CommonBanner pageName="Comparison" />
                 <ProductComparisonTable product1={listShoppingProducts[0]} product2={listShoppingProducts[1]} />
+                <CertificateBanner />
                 <Footer />
             </>
         );
@@ -33,10 +33,50 @@ function ProductComparisonTable({ product1, product2 }) {
         ref.current.style.visibility = "hidden";
     }
 
+    const rows = [];
+    rows.push(
+        <tr >
+            <td style={{ borderBottom: "1px solid #E8e8e8" }}></td>
+            <td style={{ borderBottom: "1px solid #E8e8e8" }}></td>
+            <td style={{ borderBottom: "1px solid #E8e8e8" }}></td>
+            <td style={{ borderBottom: "1px solid #E8e8e8" }}></td>
+        </tr>
+    )
+
+    for (var i in product1.info) {
+        const temp = [];
+
+
+        for (let j of product1.info[i].value) {
+            let sth = product2.info[i].value.find((item) => item.name === j.name);
+            console.log(sth);
+
+            temp.push(
+                <tr aria-colspan={4}>
+                    <td className="content-text" style={{ borderRight: "1px solid #E8E8E8" }}>{j.name}</td>
+                    <td className="content-text" style={{ borderRight: "1px solid #E8E8E8" }}>{j.value}</td>
+                    <td className="content-text" style={{ borderRight: "1px solid #E8E8E8" }}>{sth.value}</td>
+                </tr>
+            )
+        }
+
+        rows.push(
+            <>
+                <tr>
+                    <td className="title-text" style={{ borderRight: "1px solid #E8E8E8" }}>{product1.info[i].name}</td>
+                    <td className="content-text" style={{ borderRight: "1px solid #E8E8E8" }}></td>
+                    <td className="content-text" style={{ borderRight: "1px solid #E8E8E8" }}></td>
+                </tr>
+                {temp}
+            </>
+
+        )
+    }
+
     return (
         <table id="product-comparison">
             <tbody>
-                <tr aria-colspan={4} key="product-compare-header">
+                <tr aria-colspan={4} key="product-compare-header" >
                     <td>
                         <div className="title-text">
                             Go to Product page for more Products
@@ -65,6 +105,17 @@ function ProductComparisonTable({ product1, product2 }) {
                             </div>
                         </div>
                     </td>
+                </tr>
+                {rows}
+                <tr>
+                    <td style={{ borderRight: "1px solid #E8E8E8" }}></td>
+                    <td style={{ borderRight: "1px solid #E8E8E8" }}>
+                        <div className="add-button">Add To Cart</div>
+                    </td>
+                    <td style={{ borderRight: "1px solid #E8E8E8" }}>
+                        <div className="add-button">Add To Cart</div>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
