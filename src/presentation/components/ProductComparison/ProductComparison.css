@@ -1,0 +1,128 @@
+#product-comparison {
+    margin: 0px 54px;
+    table-layout: fixed;
+    /* width: 95%; */
+}
+
+#product-comparison td {
+    /* display: inline-flex; */
+    /* display: flex; */
+    width: 25%;
+    flex-flow: nowrap column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: justify;
+    vertical-align: top;
+    padding: 0px 40px;
+}
+
+#product-comparison .title-text {
+    color: #000;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 126.5%;
+    margin-top: 54px
+        /* 35.42px */
+}
+
+
+
+#product-comparison .view-more {
+    color: #727272;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    border-bottom: 1px solid #727272;
+    padding-top: 20px;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+#product-comparison .product-image {
+    width: 280px;
+    height: 177px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #F9F1E7;
+
+    align-content: center;
+    object-fit: contain;
+
+    margin-top: 34px;
+    padding-bottom: 18px;
+}
+
+#product-comparison .product-name {
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 126.5%;
+    padding-bottom: 6px;
+    /* 30.36px */
+}
+
+#product-comparison .product-price {
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#choose-product-dropdown .dropbtn {
+    display: flex;
+    height: 26px;
+    width: 80%;
+    justify-content: space-between;
+    flex-shrink: 0;
+    align-items: center;
+    flex-flow: nowrap row;
+    border-radius: 6px;
+    background: var(--primary, #B88E2F);
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 126.5%;
+    padding: 16px 8px;
+    border: none;
+    /* 17.71px */
+}
+
+#choose-product-dropdown .choose-product-content {
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    flex-flow: column wrap;
+    /* width: 80%; */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#choose-product-dropdown a {
+    border-radius: 6px;
+    background: var(--primary, #B88E2F);
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 126.5%;
+    padding: 16px 8px;
+    border: none;
+
+    margin-top: 5px;
+}

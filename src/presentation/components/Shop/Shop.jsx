@@ -1,17 +1,17 @@
 import React from "react";
 import { Footer, Header } from "../common";
-import ShopBanner from "../ShopBanner/ShopBanner";
 import ShopFilter from "../ShopFilter/ShopFilter";
 import { ListProducts } from "../Home/Home";
 import { listProducts } from "../../constants";
 import './Shop.css';
+import CommonBanner from "../common/CommonBanner/CommonBanner";
 
 class Shop extends React.Component {
     render() {
         return (
             <>
                 <Header />
-                <ShopBanner />
+                <CommonBanner pageName="Shop" />
                 <ShopFilter />
                 <ProductsView />
                 <ShopBottomBanner />
@@ -95,7 +95,7 @@ function CertificateShop({ icon, title, des }) {
     return (
         <div className="certificate">
             {icon}
-            <div className="certificate-detail" style={{marginLeft: "10px"}}>
+            <div className="certificate-detail" style={{ marginLeft: "10px" }}>
                 <div className="certificate-title">{title}</div>
                 <div className="certificate-des">{des}</div>
             </div>

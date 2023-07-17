@@ -20,6 +20,8 @@ export const listShoppingProducts = [
         currency: "Rp",
         imageSrc: MainImage,
         id: "product-99",
+        views: 204,
+        star: 4.7
     },
     {
         name: "Casaliving Wood",
@@ -28,6 +30,8 @@ export const listShoppingProducts = [
         currency: "Rp",
         imageSrc: MainImage2,
         id: "product-100",
+        views: 145,
+        star: 4.2
     },
 
 ]

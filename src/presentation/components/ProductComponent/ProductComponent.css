@@ -72,14 +72,14 @@
     padding-bottom: 22px;
 }
 
-#product-information .product-stat {
+#product-stat {
     display: flex;
-    flex-flow: wrap row;
+    flex-flow: nowrap row;
     align-items: center;
     padding-bottom: 10px;
 }
 
-#product-information .product-reivews {
+#product-stat .product-reivews {
     height: 30px;
     text-align: center;
     margin-left: 18px;
@@ -89,7 +89,7 @@
     align-items: center;
 }
 
-#product-information .product-reviews {
+#product-stat .product-reviews {
     color: #9F9F9F;
     font-family: Poppins;
     font-size: 13px;

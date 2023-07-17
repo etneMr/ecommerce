@@ -4,6 +4,7 @@ import Contact from '../components/Contact/Contact'
 import About from '../components/About/About'
 import ErrorPage from '../components/Error/Error'
 import Product from '../components/Product/Product'
+import { ProductComparison } from '../components/ProductComparison/Productcomparison'
 import {
     createBrowserRouter,
 } from "react-router-dom";
@@ -41,6 +42,11 @@ export const router = createBrowserRouter(
         {
             path: '/about',
             element: <About />,
+            errorElement: <ErrorPage />
+        },
+        {
+            path: '/product-compare/:productId',
+            element: <ProductComparison />,
             errorElement: <ErrorPage />
         },
     ]

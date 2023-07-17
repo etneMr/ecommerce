@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import './ProductCard.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 class ProductCard extends React.Component {
     // eslint-disable-next-line no-useless-constructor
@@ -62,11 +62,11 @@ function ProductDetail({ name, description, price, basePrice, currency }) {
     );
 }
 
-function ProductHover({productId}) {
+function ProductHover({ productId }) {
     return (
         <>
             <div id="product-hover">
-                <NavLink className="product-add" to={`${productId}`}>
+                <NavLink className="product-add" to={`/shop/${productId}`}>
                     <div className="add-text">
                         Add to cart
                     </div>
@@ -80,14 +80,14 @@ function ProductHover({productId}) {
                             Share
                         </div>
                     </div>
-                    <div className="product-action-option">
+                    <Link className="product-action-option" to={`/product-compare/${productId}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M10.08 7L11.08 8L14.52 4.55L11 1L10 2L11.8 3.8H2.00001V5.2H11.82L10.08 7ZM5.86001 9L4.86001 8L1.42001 11.5L4.91001 15L5.91001 14L4.10001 12.2H14V10.8H4.10001L5.86001 9Z" fill="white" />
                         </svg>
                         <div className="action-option">
                             Compare
                         </div>
-                    </div>
+                    </Link>
                     <div className="product-action-option">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M7.99973 14.0361C-5.33333 6.66667 3.99999 -1.33333 7.99973 3.72537C12 -1.33334 21.3333 6.66667 7.99973 14.0361Z" stroke="white" strokeWidth="1.8" />

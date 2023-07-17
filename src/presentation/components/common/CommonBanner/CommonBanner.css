@@ -1,14 +1,14 @@
-#shop-banner {
+#common-banner {
     height: 316px;
 
-    background-image: url(../../assets/images/product2.png);
+    background-image: url(../../../assets/images/product2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(10px);
 }
 
-#shop-banner .shop-title {
+#common-banner .common-title {
     color: #000;
     font-family: Poppins;
     font-size: 48px;
@@ -18,7 +18,7 @@
     filter: none;
 }
 
-#shop-banner .shop-home {
+#common-banner .common-home {
     color: #000;
     font-family: Poppins;
     font-size: 16px;
@@ -31,7 +31,7 @@
     align-content: center;
 }
 
-#shop-banner .shop-dash {
+#common-banner .common-dash {
     color: #000;
     font-family: Poppins;
     font-size: 16px;
@@ -41,7 +41,7 @@
     line-height: normal;
 }
 
-#shop-banner .shop-shop {
+#common-banner .common-common {
     color: #000;
     font-family: Poppins;
     font-size: 16px;
@@ -50,7 +50,7 @@
     line-height: normal;
 }
 
-#shop-banner .blur-div {
+#common-banner .blur-div {
     backdrop-filter: blur(3px);
     height: 316px;
     align-self: stretch;
@@ -60,3 +60,7 @@
     align-items: center;
     flex-flow: wrap column;
 }
+
+/* #common-banner .common-icon{
+
+} */
