@@ -98,7 +98,7 @@ function BillingInformation({ listProducts }) {
 }
 
 
-function TextField({ label, placeholder, initialValue, type, name }) {
+export function TextField({ label, placeholder, initialValue, type, name }) {
     return (
         <div className="text-form-field">
             <label className="text-form-label">
@@ -107,4 +107,15 @@ function TextField({ label, placeholder, initialValue, type, name }) {
             <input type="text" className="text-field" name={name} placeholder={placeholder} value={initialValue} />
         </div>
     );
+}
+
+export function TextAreaField({ label, placeholder, initialValue, type, name}){
+    return(
+        <div className="text-form-field">
+            <label className="text-form-label">
+                {label}
+            </label>
+            <textarea type="textare" className="text-field" name={name} placeholder={placeholder} value={initialValue} />
+        </div>
+    )
 }
