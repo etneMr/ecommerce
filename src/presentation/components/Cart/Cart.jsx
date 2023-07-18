@@ -38,11 +38,12 @@ function CartProductTable({ listProducts }) {
     return (
         <table className="cart-product-table">
             <tbody>
-                <tr aria-colspan={5} className="header" key="id0-header">
+                <tr aria-colspan={5} key="id0-header">
                     <th className="header">Product</th>
                     <th className="header">Price</th>
                     <th className="header">Quantity</th>
                     <th className="header">Subtotal</th>
+                    <th className="header"></th>
                 </tr>
                 {rows}
             </tbody>
@@ -59,14 +60,21 @@ function ProductComponentRow({ product }) {
                     {product.name}
                 </div>
             </td>
-            <td className="product-text">
-                Rs. {product.price}
+            <td>
+                <div className="product-text">
+                    Rs. {product.price}
+                </div>
             </td>
-            <td className="product-quantity">
-                {product.quantity}
+            <td>
+                <div className="product-quantity">
+                    {product.quantity}
+
+                </div>
             </td>
-            <td className="product-subtotal">
-                {product.subtotal}
+            <td>
+                <div className="product-subtotal">
+                    Rs. {product.subtotal}
+                </div>
             </td>
             <td>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="#B88E2F">

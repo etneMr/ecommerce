@@ -1,23 +1,37 @@
 #cart-component {
     display: flex;
-    flex-flow: wrap row;
+    flex-flow: row;
     padding: 72px 100px;
+
+    align-items: flex-start;
+    align-content: flex-start;
 }
 
 .cart-product-table {
-    padding-right: 32px;
+    margin-right: 32px;
     table-layout: fixed;
+    border-collapse: collapse;
+    flex-grow: 1;
+}
+
+.cart-product-table td {
+    height: fit-content;
+    padding: 0;
+    align-self: flex-start;
 }
 
 .cart-product-table .header {
-    display: inline;
-    background: #F9F1E7;
-    padding: 15px auto;
+    background-color: #F9F1E7;
+    padding: 15px 0px;
+}
+
+.cart-product-table .header:not(:first-child) {
+    text-align: start;
 }
 
 .cart-product-table .product-image-name {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     align-items: center;
     flex-flow: row wrap;
 }
@@ -27,8 +41,13 @@
     height: 105px;
     border-radius: 10px;
     background: #D9D9D9;
-    flex-shrink: 0;
     object-fit: contain;
+    margin: 25px 0px;
+}
+
+.product-image-name .product-image:not(:first-child) {
+    margin-top: 55px;
+    margin-bottom: 25px;
 }
 
 #cart-component .product-text {
@@ -51,8 +70,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-    height: fit-content;
+    width: fit-content;
 }
 
 #cart-component .product-subtotal {
@@ -70,7 +88,6 @@
 
     padding: 15px 75px;
     justify-content: flex-start;
-    /* align-items: center; */
     padding-bottom: 80px;
 
     background: #F9F1E7;
@@ -82,7 +99,6 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 30px;
-    /* align-self:baseline; */
 }
 
 .cart-totals .cart-text {

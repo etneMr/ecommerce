@@ -16,6 +16,7 @@ export const listShoppingProducts = [
     {
         name: "Asgaard sofa",
         price: 2500000,
+        subtotal: 2500000,
         quantity: 1,
         currency: "Rp",
         imageSrc: MainImage,
@@ -124,6 +125,7 @@ export const listShoppingProducts = [
         price: 2500000,
         quantity: 1,
         currency: "Rp",
+        subtotal: 2500000,
         imageSrc: MainImage2,
         id: "product-100",
         views: 145,
