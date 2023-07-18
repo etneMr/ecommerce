@@ -5,6 +5,7 @@ import About from '../components/About/About'
 import ErrorPage from '../components/Error/Error'
 import Product from '../components/Product/Product'
 import Cart from '../components/Cart/Cart'
+import Checkout from '../components/Checkout/Checkout'
 import { ProductComparison } from '../components/ProductComparison/Productcomparison'
 import {
     createBrowserRouter,
@@ -53,6 +54,11 @@ export const router = createBrowserRouter(
         {
             path: '/cart',
             element: <Cart />,
+            errorElement: <ErrorPage />
+        },
+        {
+            path: '/checkout',
+            element: <Checkout />,
             errorElement: <ErrorPage />
         },
     ]
