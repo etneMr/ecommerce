@@ -13,9 +13,9 @@ class ProductCard extends React.Component {
         return (
             <>
                 <div id="product-item">
-                    <ProductImage imageSrc={this.props.product.imageSrc} name={this.props.product.name} status={this.props.product.status.isNew ? "New" : this.props.product.status.discount} />
-                    <ProductDetail name={this.props.product.name} description={this.props.product.describe}
-                        price={this.props.product.price} basePrice={this.props.product.basePrice} currency={this.props.product.currency}
+                    <ProductImage imageSrc={this.props.product.images[0]} name={this.props.product.title} status={(this.props.product.status?.isNew ?? false) ? "New" : (this.props.product.discountPercentage ?? undefined)} />
+                    <ProductDetail name={this.props.product.title} description={this.props.product.description}
+                        basePrice={this.props.product.price} discount={(this.props.product.discountPercentage ?? undefined)} currency={this.props.product.currency}
                     />
                     <ProductHover productId={this.props.product.id} />
                 </div>
@@ -42,7 +42,7 @@ function ProductImage({ imageSrc, name, status }) {
                 position: "relative"
             }}>
                 {(status !== undefined) && <div className="product-status" style={{ backgroundColor: (status === "New") && "#2EC1AC" }}>
-                    <div className="product-text-status">{(status === "New") ? status : ("-" + status * 100 + "%")}</div>
+                    <div className="product-text-status">{(status === "New") ? status : ("-" + status.toFixed(1) + "%")}</div>
                 </div>}
                 <img className="product-image" src={imageSrc} alt={name} />
             </div>
@@ -50,13 +50,14 @@ function ProductImage({ imageSrc, name, status }) {
     );
 }
 
-function ProductDetail({ name, description, price, basePrice, currency }) {
+function ProductDetail({ name, description, basePrice, discount, currency = "USD" }) {
+    let price = basePrice - basePrice * (discount / 100);
     return (
         <>
             <div className="product-detail">
                 <div className="product-name">{name}</div>
-                <div className="product-description">{description}</div>
-                <div className="product-price">{currency} {price} {(basePrice !== price) && <span className="product-base-price">{currency} {basePrice}</span>}</div>
+                <p className="product-description">{description}</p>
+                <div className="product-price">{currency} {price} {(basePrice !== undefined) && <span className="product-base-price">{currency} {basePrice}</span>}</div>
             </div>
         </>
     );

@@ -13,6 +13,7 @@ import {
     ImageProduct8
 } from "../../constants";
 import ProductCard from "../ProductCard/ProductCard";
+import { apiProduct } from "../../services/axios/axoisRepo";
 import './Home.css';
 
 class Home extends React.Component {
@@ -31,10 +32,25 @@ class Home extends React.Component {
 export default Home;
 
 function OurProduct() {
+    const [products, setProducts] = React.useState(null);
+    const [error, setError] = React.useState(null);
+
+    React.useEffect(() => {
+        // invalid url will trigger an 404 error
+        apiProduct.getAllProduct().then((response) => {
+            setProducts(response.data.products)
+        }).catch(error => {
+            setError(error);
+        });
+    }, []);
+
+    if (error) return `Error: ${error.message}`;
+    if (!products) return "No post!"
+
     return (
         <>
             <div className="product-header">Our Products</div>
-            <ListProducts listProducts={listProducts} />
+            <ListProducts listProducts={products} />
             <div id="product-showMore-comp">
                 <button className="product-showMore">
                     <div className="showMore-text">Show More</div>
