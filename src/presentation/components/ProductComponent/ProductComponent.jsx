@@ -1,6 +1,8 @@
 import React from "react";
 import './ProductComponent.css';
-import { MainImage, ImageSofa1, ImageSofa2, ImageSofa3, ImageSofa4 } from "../../constants";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/reducers/cart";
+import { Link } from "react-router-dom";
 
 const optional = [
     {
@@ -55,53 +57,51 @@ const articles = [
         display: "Tags",
         data: ["Sofa", "Chair", "Home", "Shop"]
     },
-    // {
-    //     display: "Share",
-    //     data: ["facebook", "twitter", "instagram"]
-    // }
 ];
 
-export default class ProductComponent extends React.Component {
-    render() {
-        return (
-            <div id="product-component">
-                <ProductImage />
-                <ProductInformation />
-            </div>
-        );
-    }
-
-}
-
-function ProductImage() {
+export default function ProductComponent({ product }) {
     return (
-        <div id="product-image">
-            <div className="sub-image">
-                <img className="image" src={ImageSofa1} alt="main sofa" />
-                <img className="image" src={ImageSofa2} alt="main sofa" />
-                <img className="image" src={ImageSofa3} alt="main sofa" />
-                <img className="image" src={ImageSofa4} alt="main sofa" />
-            </div>
-            <img className="main-image" src={MainImage} alt="main sofa" />
+        <div id="product-component">
+            <ProductImage listImages={product.images} thumbnail={product.thumbnail} />
+            <ProductInformation product={product} />
         </div>
     );
 }
 
-function ProductInformation() {
+function ProductImage(props) {
+    if (!props.listImages) return;
+    const thumbnail = props.thumbnail;
+    const rows = [];
+    let listImages = props.listImages;
+    listImages.map((image, index) =>
+        rows.push(
+            <img className="image" src={image} alt="main sofa" key={"product-" + index} />
+        ))
+    return (
+        <div id="product-image">
+            <div className="sub-image">
+                {rows}
+            </div>
+            <img className="main-image" src={thumbnail} alt="product-thumbnail" />
+        </div>
+    );
+}
+
+function ProductInformation({ product }) {
     return (
         <div id="product-information">
             <div className="product-title">
-                Asgaard sofa
+                {product.title}
             </div>
             <div className="product-price">
-                Rs. 250,000.00
+                USD {product.price}
             </div>
-            <ProductStat star={4.5} views={5} />
+            <ProductStat star={product.rating} views={5} />
             <div className="product-describe">
-                Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
+                {product.description}
             </div>
             <ProductOptional optional={optional} />
-            <ProductDecided />
+            <ProductDecided product={product} />
             <ProductArticle articles={articles} />
         </div>
     );
@@ -150,14 +150,14 @@ function ProductOptional({ optional }) {
             switch (i.type) {
                 case 'text':
                     options.push(
-                        <div className="product-optional-select-item" key={op.id}>
+                        <div className="product-optional-select-item" key={op.value}>
                             {op.display}
                         </div>
                     );
                     break;
                 case 'color':
                     options.push(
-                        <div key={op.id} className="product-optional-select-item" style={{ backgroundColor: op.display, borderRadius: "50%" }}>
+                        <div key={op.value} className="product-optional-select-item" style={{ backgroundColor: op.display, borderRadius: "50%" }}>
                             {/* {op.display} */}
                         </div>
                     );
@@ -185,22 +185,32 @@ function ProductOptional({ optional }) {
     );
 }
 
-function ProductDecided() {
+function ProductDecided({ product }) {
+    const [quantity, setQuantity] = React.useState(1);
+
+    function handleQuantity(num) {
+        setQuantity(Math.max(1, quantity + num))
+    }
+
+    const dispath = useDispatch();
+
     return (
         <div className="product-decided">
-            <QuantityController />
-            <div className="product-decided-butotn">Add To Cart</div>
-            <div className="product-decided-butotn">+ Compare</div>
-        </div>
+            <QuantityController quantity={quantity} handleOnClick={handleQuantity} />
+            <button className="product-decided-butotn" onClick={() => {
+                dispath(addToCart({ product, quantity }));
+            }}>Add To Cart</button>
+            <Link className="product-decided-butotn" to={`/product-compare/${product.id}`} > + Compare</Link>
+        </div >
     );
 }
 
-function QuantityController() {
+function QuantityController({ quantity, handleOnClick }) {
     return (
         <div className="product-quantity-controller">
-            <div className="product-quantity-negative">-</div>
-            <div className="product-quantity-text">1</div>
-            <div className="product-quantity-plus">+</div>
+            <button className="product-quantity-negative" onClick={() => handleOnClick(-1)}>-</button>
+            <div className="product-quantity-text">{quantity}</div>
+            <button className="product-quantity-plus" onClick={() => handleOnClick(1)}>+</button>
         </div>
     );
 }

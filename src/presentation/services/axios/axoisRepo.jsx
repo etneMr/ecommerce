@@ -7,4 +7,9 @@ export const apiProduct = {
         const url = AppConstant.baseUrl + 'products';
         return await axios.get(url, params);
     },
+
+    getOneProduct: async (productId, params) => {
+        const url = AppConstant.baseUrl + `products/${productId}`;
+        return await axios.get(url, params);
+    }
 };

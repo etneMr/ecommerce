@@ -46,7 +46,6 @@ function ProductsView() {
     }, [limit, dispatch]);
 
     function onPageClick(page) {
-        console.log(page);
         const params = {
             params: {
                 limit: limit,

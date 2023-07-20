@@ -49,7 +49,6 @@ function ProductComparisonTable({ product1, product2 }) {
 
         for (let j of product1.info[i].value) {
             let sth = product2.info[i].value.find((item) => item.name === j.name);
-            console.log(sth);
 
             temp.push(
                 <tr aria-colspan={4}>

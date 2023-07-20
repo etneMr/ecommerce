@@ -13,17 +13,15 @@ class ProductCard extends React.Component {
         return (
             <>
                 <div id="product-item">
-                    <ProductImage imageSrc={this.props.product.images[0]} name={this.props.product.title} status={(this.props.product.status?.isNew ?? false) ? "New" : (this.props.product.discountPercentage ?? undefined)} />
+                    <ProductImage imageSrc={this.props.product.thumbnail} name={this.props.product.title} status={(this.props.product.status?.isNew ?? false) ? "New" : (this.props.product.discountPercentage ?? undefined)} />
                     <ProductDetail name={this.props.product.title} description={this.props.product.description}
                         basePrice={this.props.product.price} discount={(this.props.product.discountPercentage ?? undefined)} currency={this.props.product.currency}
                     />
-                    <ProductHover productId={this.props.product.id} />
+                    <ProductHover productId={this.props.product.id} productName={this.props.product.title} />
                 </div>
             </>
         );
     }
-
-
 }
 
 ProductCard.propsTypes = {
@@ -63,11 +61,16 @@ function ProductDetail({ name, description, basePrice, discount, currency = "USD
     );
 }
 
-function ProductHover({ productId }) {
+function ProductHover({ productId, productName }) {
     return (
         <>
             <div id="product-hover">
-                <NavLink className="product-add" to={`/shop/${productId}`}>
+                <NavLink className="product-add" to={{
+                    pathname: `/shop/${productId}`, productPropps: {
+                        id: productId,
+                        name: productName
+                    }
+                }}>
                     <div className="add-text">
                         Add to cart
                     </div>
@@ -97,9 +100,8 @@ function ProductHover({ productId }) {
                             Like
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </div >
         </>
     );
 }

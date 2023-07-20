@@ -3,7 +3,8 @@ export * from './product-image';
 export * from './product-data';
 
 export const EToken = {
-    xLimit: "xLimit"
+    xLimit: "xLimit",
+    xlistCard: "xListCard"
 }
 
 export const AppConstant = {

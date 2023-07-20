@@ -5,21 +5,40 @@ import ProductComponent from "../ProductComponent/ProductComponent";
 import { ImageCloundSofa1, ImageCloundSofa2 } from "../../constants";
 import { listRelatedProducts } from '../../constants';
 import { ListProducts } from "../Home/Home";
+import { useParams } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import { apiProduct } from "../../services/axios/axoisRepo";
+import { updateProduct } from "../../redux/reducers/product";
+import { updateListProduct } from "../../redux/reducers/shopFilter";
 
+export default function Product() {
+    const params = useParams();
+    const [error, setError] = React.useState(null);
+    let productId = params.productId;
 
-export default class Product extends React.Component {
-    render() {
-        return (
-            <>
-                <Header />
-                <ProductRef name="Asgaard sofa" />
-                <ProductComponent />
-                <ProductInfoComponent />
-                <RelatedProduct />
-                <Footer />
-            </>
-        );
-    }
+    const product = useSelector((state) => state.product.product);
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        apiProduct.getOneProduct(productId).then((response) => {
+            dispatch(updateProduct(response.data));
+        }).catch(error => {
+            setError(error);
+        });
+    }, [productId, dispatch]);
+
+    if (!product) return "Loading"
+
+    return (
+        <>
+            <Header />
+            <ProductRef name={product.title} />
+            <ProductComponent product={product} />
+            <ProductInfoComponent product={product} />
+            <RelatedProduct />
+            <Footer />
+        </>
+    );
 
 }
 
@@ -46,7 +65,7 @@ function ProductRef({ name }) {
     );
 }
 
-function ProductInfoComponent() {
+function ProductInfoComponent(product) {
     return (
         <div id="product-info">
             <div className="product-info-header">
@@ -76,10 +95,31 @@ function ProductInfoComponent() {
 
 
 function RelatedProduct() {
+    const [error, setError] = React.useState(null);
+
+    const { list } = useSelector((state) => state.shopFilter);
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        const params = {
+            params: {
+                limit: 4,
+            }
+        }
+        apiProduct.getAllProduct(params).then((response) => {
+            dispatch(updateListProduct(response.data));
+        }).catch(error => {
+            setError(error);
+        });
+    }, [dispatch]);
+
+    if (error) return `Error: ${error.message}`;
+    if (!list) return "No post!"
+
     return (
         <div id="product-related">
             <div className="product-related-header">Related Products</div>
-            <ListProducts listProducts={listRelatedProducts} />
+            <ListProducts listProducts={list} />
             <div id="product-showMore-comp">
                 <button className="product-showMore">
                     <div className="showMore-text">Show More</div>

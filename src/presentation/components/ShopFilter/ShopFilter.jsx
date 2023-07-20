@@ -1,7 +1,6 @@
 import React from "react";
-import { apiProduct } from "../../services/axios/axoisRepo";
 import { useSelector, useDispatch } from "react-redux";
-import { filterLimit, updateListProduct } from "../../redux/reducers/shopFilter";
+import { filterLimit } from "../../redux/reducers/shopFilter";
 import './ShopFilter.css';
 
 export default function ShopFilter() {
@@ -43,7 +42,14 @@ export default function ShopFilter() {
                 </>
                 <>
                     <div className="field-title">Short by</div>
-                    <div className="field-border" style={{ padding: "13px 0px 13px 30px", width: "188px" }}>{shortBy}</div>
+                    <div className="dropdown">
+                        <div className="field-border" style={{ padding: "13px 0px 13px 30px", width: "188px" }}>{shortBy}</div>
+                        <div className="dropdown-content">
+                            <div className="dropdown-item" onClick={() => handleClick(limit, "default")}>default</div>
+                            <div className="dropdown-item" onClick={() => handleClick(limit, "price")}>price</div>
+                            <div className="dropdown-item" onClick={() => handleClick(limit, "title")}>title</div>
+                        </div>
+                    </div>
                 </>
             </div>
         </div>

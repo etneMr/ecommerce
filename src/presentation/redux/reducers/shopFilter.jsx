@@ -15,8 +15,6 @@ export const shopFilterSlice = createSlice({
     initialState: initialState,
     reducers: {
         filterLimit: (state, action) => {
-            console.log(action.newLimit);
-            console.log(action.newShortBy);
             state.limit = action.payload.newLimit;
             state.shortBy = action.payload.newShortBy;
 
