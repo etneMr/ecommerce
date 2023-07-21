@@ -55,7 +55,7 @@ function BillingInformation({ listProducts }) {
             <div>
                 <div className="product-name">{product.name}</div> x {product.quantity}
             </div>
-            <div className="regular-text">Rs. {product.price}</div>
+            <div className="regular-text">USD {product.price}</div>
         </li>
     ));
     return (
@@ -68,11 +68,11 @@ function BillingInformation({ listProducts }) {
                 {rows}
                 <li>
                     <div className="sub-text">Subtotal</div>
-                    <div className="regular-text">Rs. 250,000.00</div>
+                    <div className="regular-text">USD 250,000.00</div>
                 </li>
                 <li>
                     <div className="sub-text">Total</div>
-                    <div className="total-text">Rs. 250,000.00</div>
+                    <div className="total-text">USD 250,000.00</div>
                 </li>
             </ul>
             <div className="select-payment">

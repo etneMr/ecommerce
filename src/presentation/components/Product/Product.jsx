@@ -3,13 +3,13 @@ import './Product.css';
 import { Header, Footer } from '../common';
 import ProductComponent from "../ProductComponent/ProductComponent";
 import { ImageCloundSofa1, ImageCloundSofa2 } from "../../constants";
-import { listRelatedProducts } from '../../constants';
 import { ListProducts } from "../Home/Home";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { apiProduct } from "../../services/axios/axoisRepo";
 import { updateProduct } from "../../redux/reducers/product";
 import { updateListProduct } from "../../redux/reducers/shopFilter";
+import { Link } from "react-router-dom";
 
 export default function Product() {
     const params = useParams();
@@ -46,13 +46,13 @@ function ProductRef({ name }) {
     return (
         <div id="product-ref">
             <div className="product-ref-text">
-                <div className="text">Home</div>
+                <Link to={`/`} className="text">Home</Link>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M6 15L11 10L6 5L7 3L14 10L7 17L6 15Z" fill="black" />
                 </svg>
             </div>
             <div className="product-ref-text">
-                <div className="text">Shop</div>
+                <Link to={`/shop`} className="text">Shop</Link>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M6 15L11 10L6 5L7 3L14 10L7 17L6 15Z" fill="black" />
                 </svg>
@@ -121,9 +121,9 @@ function RelatedProduct() {
             <div className="product-related-header">Related Products</div>
             <ListProducts listProducts={list} />
             <div id="product-showMore-comp">
-                <button className="product-showMore">
+                <Link to={`/shop`} className="product-showMore">
                     <div className="showMore-text">Show More</div>
-                </button>
+                </Link>
             </div>
         </div>
     )

@@ -30,11 +30,11 @@ export function Header() {
         const fetchData = async () => {
             let listProd = [];
             const listCart = JSON.parse(localStorage.getItem(EToken.xlistCard)) || [];
+            // console.log(listCart);
             await listCart.map((item) =>
                 apiProduct.getOneProduct(item.productId).then((response) => {
                     listProd = [...listProd, { quantity: item.quantity, product: response.data }]
-                    dispath(updateCart(listProd))
-
+                    dispath(updateCart({ listProd, listCart }))
                 }
                 ).catch((error) => {
                     console.log(error);

@@ -12,6 +12,8 @@
     display: flex;
 }
 
+
+
 #product-ref .product-ref-name {
     padding-left: 34px;
     border-left: 2px solod #9F9F9F;
@@ -32,6 +34,12 @@
     font-weight: 400;
     line-height: normal;
     margin-right: 14px;
+
+    text-decoration: none;
+}
+
+#product-ref .text:hover {
+    text-decoration: underline;
 }
 
 #product-info {

@@ -43,6 +43,7 @@
     background: #D9D9D9;
     object-fit: contain;
     margin: 25px 0px;
+    margin-right: 25px;
 }
 
 .product-image-name .product-image:not(:first-child) {
@@ -60,9 +61,7 @@
 }
 
 #cart-component .product-quantity {
-    border-radius: 5px;
-    border: 1px solid #9F9F9F;
-    padding: 4px 13px;
+    margin: 4px 13px;
 
     color: #000;
     font-family: Poppins;
@@ -70,6 +69,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+#cart-component .product-quantity-border {
+    border-radius: 5px;
+    border: 1px solid #9F9F9F;
     width: fit-content;
 }
 
@@ -152,4 +156,9 @@
     border: 1px solid #000;
 
     padding: 14px 59px;
+
+    text-decoration: none;
+}
+.cart-totals .cart-checkout:hover {
+    background:#fff;
 }

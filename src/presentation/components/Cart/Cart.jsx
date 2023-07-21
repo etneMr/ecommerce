@@ -1,7 +1,9 @@
 import React from "react";
-import { listShoppingProducts } from "../../constants";
 import { Footer, Header, CertificateBanner, CommonBanner } from "../common";
 import './Cart.css';
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { removeFromCart } from "../../redux/reducers/cart";
 
 export default class Cart extends React.Component {
     render() {
@@ -18,10 +20,12 @@ export default class Cart extends React.Component {
 }
 
 function CartComponent() {
+    const { list, subTotal } = useSelector((state) => state.cart);
+
     return (
         <div id="cart-component">
-            <CartProductTable listProducts={listShoppingProducts} />
-            <CartTotals subtotal="Rs. 2.500.000" total="Rs. 2.500.000" />
+            <CartProductTable listProducts={list} />
+            <CartTotals subtotal={`USD ${subTotal}`} total={`USD ${subTotal}`} />
         </div>
     );
 }
@@ -52,32 +56,37 @@ function CartProductTable({ listProducts }) {
 }
 
 function ProductComponentRow({ product }) {
+    const dispath = useDispatch();
+    function removeProductOnClick(productId) {
+        dispath(removeFromCart(productId));
+    }
     return (
         <>
             <td className="product-image-name">
-                <img className="product-image" src={product.imageSrc} alt={product.name} />
+                <img className="product-image" src={product.product.thumbnail} alt={product.product.title} />
                 <div className="product-text">
-                    {product.name}
+                    {product.product.title}
                 </div>
             </td>
             <td>
                 <div className="product-text">
-                    Rs. {product.price}
+                    USD {product.product.price}
                 </div>
             </td>
             <td>
-                <div className="product-quantity">
-                    {product.quantity}
-
+                <div className="product-quantity-border">
+                    <div className="product-quantity">
+                        {product.quantity}
+                    </div>
                 </div>
             </td>
             <td>
                 <div className="product-subtotal">
-                    Rs. {product.subtotal}
+                    USD {product.product.price * product.quantity}
                 </div>
             </td>
             <td>
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="#B88E2F">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="#B88E2F" onClick={() => removeProductOnClick(product.product.id)}>
                     <path d="M23.625 7H20.125V4.8125C20.125 3.84727 19.3402 3.0625 18.375 3.0625H9.625C8.65977 3.0625 7.875 3.84727 7.875 4.8125V7H4.375C3.89102 7 3.5 7.39102 3.5 7.875V8.75C3.5 8.87031 3.59844 8.96875 3.71875 8.96875H5.37031L6.0457 23.2695C6.08945 24.202 6.86055 24.9375 7.79297 24.9375H20.207C21.1422 24.9375 21.9105 24.2047 21.9543 23.2695L22.6297 8.96875H24.2812C24.4016 8.96875 24.5 8.87031 24.5 8.75V7.875C24.5 7.39102 24.109 7 23.625 7ZM18.1562 7H9.84375V5.03125H18.1562V7Z" fill="#B88E2F" />
                 </svg>
             </td>
@@ -105,9 +114,9 @@ function CartTotals({ subtotal, total }) {
                     {total}
                 </div>
             </div>
-            <div className="cart-checkout">
+            <Link className="cart-checkout" to={`/checkout`}>
                 Check Out
-            </div>
+            </Link>
         </div>
     );
 }

@@ -30,6 +30,7 @@
 }
 
 .product-showMore {
+    text-decoration: none;
     /* display: flex; */
     text-align: center;
     border: 1px solid var(--primary, #B88E2F);

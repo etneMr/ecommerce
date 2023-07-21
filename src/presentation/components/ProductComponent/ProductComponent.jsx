@@ -100,7 +100,7 @@ function ProductInformation({ product }) {
             <div className="product-describe">
                 {product.description}
             </div>
-            <ProductOptional optional={optional} />
+            {/* <ProductOptional optional={optional} /> */}
             <ProductDecided product={product} />
             <ProductArticle articles={articles} />
         </div>

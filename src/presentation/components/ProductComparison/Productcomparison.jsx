@@ -129,7 +129,7 @@ function AboutProduct({ product }) {
                 {product.name}
             </div>
             <div className="product-price">
-                Rs. {product.price}
+                USD {product.price}
             </div>
             <ProductStat views={product.views} star={product.star} />
         </td>

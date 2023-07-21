@@ -2,6 +2,7 @@ import React from "react";
 import { Footer } from "../common";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
+import { Link } from "react-router-dom";
 import {
     ImageProduct1,
     ImageProduct2,
@@ -52,9 +53,9 @@ function OurProduct() {
             <div className="product-header">Our Products</div>
             <ListProducts listProducts={products} />
             <div id="product-showMore-comp">
-                <button className="product-showMore">
+                <Link to={`/shop`} className="product-showMore">
                     <div className="showMore-text">Show More</div>
-                </button>
+                </Link>
             </div>
         </>
     )

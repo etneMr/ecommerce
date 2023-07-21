@@ -23,7 +23,7 @@ export const shopFilterSlice = createSlice({
                     limit: state.limit,
                 }
             }
-
+            // call api o update list product
             apiProduct.getAllProduct(params).then((response) => {
                 let newState = state;
                 newState.list = response.data.products;
