@@ -173,6 +173,9 @@
     overflow: hidden;
 }
 
+.shopping-cart-top .list-shopping-product{
+    overflow: scroll;
+}
 
 
 

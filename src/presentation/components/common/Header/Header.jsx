@@ -101,7 +101,7 @@ export function Header() {
                     </div>
                 </div>
             </div>
-            <div className="root-background" ref={refBackground}></div>
+            <div className="root-background" ref={refBackground} onClick={() => callbackClose()}></div>
             <div id="shopping-cart" ref={ref}>
                 <ShoppingCart listProducts={list} callBack={callbackClose} remove={callbackRemoveCart} />
             </div>
@@ -135,7 +135,6 @@ function ShoppingCart({ listProducts, callBack, remove }) {
                         </svg>
                     </td>
                 </tr>
-
             )
         }
         )
@@ -157,7 +156,9 @@ function ShoppingCart({ listProducts, callBack, remove }) {
                             </td>
                         </tr>
                         <tr className="shopping-cart-devider"></tr>
-                        {rows}
+                        <tr className="list-shopping-product">
+                            {rows}
+                        </tr>
                     </tbody>
                 </table>
             </div>
