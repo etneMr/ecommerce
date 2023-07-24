@@ -25,3 +25,15 @@ export const apiAuth = {
         return await axios.post(url, params, config);
     }
 }
+
+export const apiCart = {
+    checkout: async (params) => {
+        let config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const url = AppConstant.baseUrl + 'products/add';
+        return await axios.post(url, params, config);
+    }
+}

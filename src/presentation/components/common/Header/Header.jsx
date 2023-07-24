@@ -83,8 +83,8 @@ export function Header() {
                     <div key="shop">
                         <Link className="item" to="/shop">Shop</Link>
                     </div>
-                    <div key="about">
-                        <Link className="item" to="/about">About</Link>
+                    <div key="cart">
+                        <Link className="item" to="/cart">Cart</Link>
                     </div>
                     <div key="contact">
                         <Link className="item" to="/contact" style={{ paddingRight: 0 }}>Contact</Link>
@@ -171,9 +171,9 @@ function ShoppingCart({ listProducts, callBack, remove }) {
                             </td>
                         </tr>
                         <tr className="shopping-cart-devider"></tr>
-                        {/* <div className="list-shopping-product"> */}
-                        {rows}
-                        {/* </div> */}
+                        <div className="list-shopping-product">
+                            {rows}
+                        </div>
                     </tbody>
                 </table>
             </div>

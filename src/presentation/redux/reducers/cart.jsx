@@ -75,10 +75,17 @@ const cartSlice = createSlice({
             state = newState;
             // store productId & quantity to local
             localStorage.setItem(EToken.xlistCard, JSON.stringify(state.listId));
+        },
+        clearCart: (state) => {
+            localStorage.clear();
+            let newState = state;
+            newState.listId = [];
+            newState.list = [];
+            newState.subTotal = 0;
         }
     }
 })
 
-export const { updateCart, addToCart, removeFromCart } = cartSlice.actions;
+export const { updateCart, addToCart, removeFromCart, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

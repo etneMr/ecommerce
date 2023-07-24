@@ -108,10 +108,18 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 5px 0px;
-    display: inline-block;
+    padding-right: 2px;
+    /* display: inline-block; */
+    vertical-align: bottom;
 }
 
+.billing-information .product-title-quantity {
+    padding: 5px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 .billing-information li {
     display: flex;

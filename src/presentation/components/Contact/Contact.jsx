@@ -1,8 +1,8 @@
 import React from "react";
 import { Footer, Header, CommonBanner, CertificateBanner } from "../common";
 import './Contact.css';
-import { Form } from "react-router-dom";
 import { TextField, TextAreaField } from "../Checkout/Checkout";
+import { useForm } from 'react-hook-form'
 
 class Contact extends React.Component {
     render() {
@@ -95,13 +95,31 @@ function ContactInformation() {
 }
 
 function ContactForm() {
+    const { register, handleSubmit } = useForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+
+    const submitForm = (data) => {
+        const submission = {
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            message: data.message,
+        }
+
+        console.log(submission)
+    }
+
     return (
-        <Form className="contact-form">
-            <TextField label="Your name" placeholder="Abc" name="name" />
-            <TextField label="Email address" placeholder="Abc@def.com" name="email" />
-            <TextField label="Subject" placeholder="This is an optional" name="subject" />
-            <TextAreaField label="Message" placeholder="Hi! i’d like to ask about" name="message" />
+        <form className="contact-form" onSubmit={handleSubmit(submitForm)}>
+            <TextField label="Your name" placeholder="Abc" name="name" register={register} />
+            <TextField label="Email address" placeholder="Abc@def.com" name="email" register={register} />
+            <TextField label="Subject" placeholder="This is an optional" name="subject" register={register} />
+            <TextAreaField label="Message" placeholder="Hi! i’d like to ask about" name="message" register={register} />
             <input type="submit" value="Submit" className="submit-button" />
-        </Form>
+        </form>
     )
 }

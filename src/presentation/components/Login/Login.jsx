@@ -54,6 +54,7 @@ export default function Login() {
                         </svg>
                     </div>
                     <input type="text" placeholder="USERNAME" {...register('username')} />
+                    {/* <Sth register={register} /> */}
                     <input type="password" placeholder="PASSWORD" {...register('password')} />
                     <input type="submit" name="login" value="Login" />
                 </form>
@@ -62,3 +63,6 @@ export default function Login() {
     );
 }
 
+// function Sth({ register }) {
+//     return (<input type="text" placeholder="USERNAME" {...register('username')} />);
+// }
