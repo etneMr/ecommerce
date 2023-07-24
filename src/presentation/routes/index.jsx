@@ -6,6 +6,7 @@ import ErrorPage from '../components/Error/Error'
 import Product from '../components/Product/Product'
 import Cart from '../components/Cart/Cart'
 import Checkout from '../components/Checkout/Checkout'
+import Login from '../components/Login/Login'
 import { ProductComparison } from '../components/ProductComparison/Productcomparison'
 import {
     createBrowserRouter,
@@ -17,6 +18,12 @@ export const router = createBrowserRouter(
             path: '/',
             element: <Home />,
             errorElement: <ErrorPage />
+        },
+        {
+            path: '/login',
+            element: <Login />,
+            errorElement: <ErrorPage />,
+            // action: loginAction
         },
         {
             path: '/shop',

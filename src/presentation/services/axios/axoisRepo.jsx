@@ -13,3 +13,15 @@ export const apiProduct = {
         return await axios.get(url, params);
     }
 };
+
+export const apiAuth = {
+    login: async (params) => {
+        let config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const url = AppConstant.baseUrl + 'auth/login';
+        return await axios.post(url, params, config);
+    }
+}

@@ -2,20 +2,34 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <title>HTML</title>
     <style>
-       
+        html,
+        #login {
+            width: 100%;
+            height: 100%;
+            /* object-fit: fill; */
+            /* overflow: hidden; */
+            margin: 0;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
-    <div className="product-detail">
-        <div className="product-name">{name}</div>
-        <span className="product-description">{description}</span>
-        <div className="product-price">{currency} {price} {(basePrice !== price) && <span
-                className="product-base-price">{currency} {basePrice}</span>}</div>
+    <div id="login">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" height="100vh" viewBox="0 0 865 720" fill="none" style={{
+position: "fixed" , right: "0" }}>
+            <path
+                d="M257.5 139C121.9 151.8 29.6667 51 0.5 -1L864.5 2.5V720.5H768C469.2 682.5 519.5 531 582 460C618.5 410.167 684.5 290.1 656.5 208.5C621.5 106.5 427 123 257.5 139Z"
+                fill="#264ECA" />
+        </svg> -->
+        <div className="background-circle">
+            <div className="background-circle-1"></div>
+            <div className="background-circle-2"></div>
+            <div className="background-circle-3"></div>
+        </div>
+        
     </div>
 </body>
 

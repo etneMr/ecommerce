@@ -1,0 +1,94 @@
+#login {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.20);
+    background-color: #2148C0;
+}
+
+#login .login-form {
+    background-color: #2148C0;
+    height: 100%;
+    /* width: 100%; */
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.login-form input[type="text"] {
+    z-index: 10;
+    width: 300px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    background: none;
+    margin-top: 71.5px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="password"] {
+    width: 300px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    margin-bottom: 43px;
+    color: #FFF;
+    z-index: 10;
+    border: 1px solid #FFF;
+    background: none;
+}
+
+.login-form input[type="submit"] {
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+    width: 300px;
+    height: 45px;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+#login .background-circle {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.background-circle .background-circle-1 {
+    width: 724px;
+    height: 724px;
+    flex-shrink: 0;
+    border-radius: 724px;
+    background: #264ECA;
+    position: fixed;
+    left: -362px;
+    bottom: -362px;
+}
+
+.background-circle .background-circle-2 {
+    width: 572px;
+    height: 572px;
+    flex-shrink: 0;
+    border-radius: 572px;
+    background: #244BC5;
+    position: fixed;
+    left: -286px;
+    bottom: -286px;
+}
+
+.background-circle .background-circle-3 {
+    width: 438px;
+    height: 438px;
+    flex-shrink: 0;
+    border-radius: 438px;
+    background: #274FC7;
+    position: fixed;
+    left: -219px;
+    bottom: -219px;
+}
