@@ -37,3 +37,15 @@ export const apiCart = {
         return await axios.post(url, params, config);
     }
 }
+
+export const apiPost = {
+    getAllPost: async (params) => {
+        const url = AppConstant.baseUrl + 'posts';
+        return await axios.get(url, params);
+    },
+
+    getOnePost: async (postId, params) => {
+        const url = AppConstant.baseUrl + `posts/${postId}`;
+        return await axios.get(url, params);
+    }
+};

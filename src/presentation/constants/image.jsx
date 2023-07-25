@@ -26,6 +26,8 @@ import IconHeart from '../assets/icons/heart.png';
 import IconShare from '../assets/icons/share.png';
 import IconCompare from '../assets/icons/compare.png';
 
+import PostImage from '../assets/images/postimg.png';
+
 
 export {
     ImageLogo,
@@ -51,5 +53,6 @@ export {
     IconSearch,
     IconCompare,
     IconHeart,
-    IconShare
+    IconShare,
+    PostImage
 }

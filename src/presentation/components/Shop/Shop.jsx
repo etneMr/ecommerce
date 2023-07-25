@@ -71,7 +71,7 @@ function ProductsView() {
     );
 }
 
-export function PageNavigation({ length, selected, callback }) {
+export function PageNavigation({ length, selected, callback, limitItems = 6 }) {
     const rows = [];
     if (selected !== 0) {
         rows.push(
@@ -80,19 +80,21 @@ export function PageNavigation({ length, selected, callback }) {
             </div>
         );
     }
-    for (let i = 0; i < length; i++) {
-        let margin = (i !== length - 1) ? "38px" : "0px";
+    const pos = ((selected + Math.ceil(limitItems / 2)) > length) ? (length - limitItems -1 ) : Math.max(selected - Math.floor(limitItems / 2), 0);
+    
+    for (let i = pos; i < limitItems + pos + 1; i++) {
+        let margin = (i !== limitItems + pos) ? "38px" : "0px";
         let color = (i !== selected) ? "#F9F1E7" : "#B88E2F";
-        if ((selected === (length - 2)) && ((i) === (length - 1))) {
+        if ((selected === (length - 2)) && ((i) === (limitItems + pos))) {
         } else {
             rows.push(
                 <div className="page-item" style={{ marginRight: margin, background: color }} key={i} onClick={() => callback((i !== length - 1) ? i : selected + 1)}>
-                    {(i !== length - 1) ? i + 1 : "Next"}
+                    {(i !== limitItems + pos) ? i + 1 : "Next"}
                 </div>
             );
         }
-
     }
+
     return (
         <div id="product-page-navigation">
             {rows}

@@ -17,7 +17,12 @@
     display: flex;
     list-style-type: none;
     flex-flow: column wrap;
+    gap: 50px;
 }
+
+/* .list-posts .list-posts-item:not(:last-child) {
+    margin-bottom: 50px;
+} */
 
 #blog-post .list-recent-posts {
     display: flex;

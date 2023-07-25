@@ -171,9 +171,9 @@ function ShoppingCart({ listProducts, callBack, remove }) {
                             </td>
                         </tr>
                         <tr className="shopping-cart-devider"></tr>
-                        <div className="list-shopping-product">
+                        {/* <div className="list-shopping-product"> */}
                             {rows}
-                        </div>
+                        {/* </div> */}
                     </tbody>
                 </table>
             </div>

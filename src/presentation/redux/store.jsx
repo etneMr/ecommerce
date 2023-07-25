@@ -3,6 +3,7 @@ import shopFilterReducer from './reducers/shopFilter';
 import productReducer from './reducers/product';
 import cartReducer from './reducers/cart';
 import userReducer from './reducers/user';
+import postReducer from './reducers/post';
 // ...
 
 const store = configureStore({
@@ -10,7 +11,8 @@ const store = configureStore({
         shopFilter: shopFilterReducer,
         product: productReducer,
         cart: cartReducer,
-        user: userReducer
+        user: userReducer,
+        post: postReducer,
     },
 })
 
