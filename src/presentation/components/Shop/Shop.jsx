@@ -71,7 +71,7 @@ function ProductsView() {
     );
 }
 
-function PageNavigation({ length, selected, callback }) {
+export function PageNavigation({ length, selected, callback }) {
     const rows = [];
     if (selected !== 0) {
         rows.push(
