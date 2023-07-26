@@ -49,9 +49,14 @@ export const apiCart = {
 }
 
 export const apiPost = {
-    getAllPost: async (params) => {
-        const url = AppConstant.baseUrl + 'posts';
-        return await axios.get(url, params);
+    getAllPost: async (params, searchText) => {
+        if (searchText) {
+            const url = AppConstant.baseUrl + `posts/search?q=${searchText}`;
+            return await axios.get(url, params);
+        } else {
+            const url = AppConstant.baseUrl + 'posts';
+            return await axios.get(url, params);
+        }
     },
 
     getOnePost: async (postId, params) => {

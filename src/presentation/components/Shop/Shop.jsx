@@ -8,9 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateListProduct } from "../../redux/reducers/shopFilter";
 
 class Shop extends React.Component {
-
     render() {
-
         return (
             <>
                 <Header />
@@ -80,9 +78,7 @@ export function PageNavigation({ length, selected, callback, limitItems = 6 }) {
             </div>
         );
     }
-    console.log(length);
-    const pos = ((selected + Math.ceil(limitItems / 2)) > length) ? (length - limitItems ) : Math.max(selected - Math.floor(limitItems / 2), 0);
-    
+    const pos = ((selected + Math.ceil(limitItems / 2)) > length) ? Math.max(length - limitItems, 0) : Math.max(selected - Math.floor(limitItems / 2), 0);
     for (let i = pos; i < limitItems + pos + 1; i++) {
         let margin = (i !== limitItems + pos) ? "38px" : "0px";
         let color = (i !== selected) ? "#F9F1E7" : "#B88E2F";
