@@ -1,8 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit"
+import Cookies from 'js-cookie'
+import { EToken } from '../../../presentation/constants';
+import * as jose from 'jose'
 
-const initialState = {
+
+const token = Cookies.get(EToken.xToken)
+var initialState = {
     user: undefined,
     token: ""
+}
+
+if (token) {
+    let user = jose.decodeJwt(token)
+    initialState = {
+        user: user,
+        token: token
+    }
 }
 
 const userSlice = createSlice({
@@ -11,25 +24,15 @@ const userSlice = createSlice({
     reducers: {
         login: (state, action) => {
             state.token = action.payload.token;
+            Cookies.set(EToken.xToken, JSON.stringify(state.token));
             state.user = action.payload.user;
         },
         logout: (state) => {
             state.user = undefined;
             state.token = '';
+            Cookies.remove(EToken.xToken)
         }
     },
-    // extraReducers: (builder) => {
-    //     builder.addCase(loginUser.pending, (state) => {
-
-    //     });
-    //     builder.addCase(loginUser.fulfilled, (state, { payload }) => {
-    //         state.token = payload.token;
-    //         state.user = payload
-    //     });
-    //     builder.addCase(loginUser.rejected, (state, { payload }) => {
-
-    //     });
-    // }
 })
 
 export const { login, logout } = userSlice.actions;

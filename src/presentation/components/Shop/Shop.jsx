@@ -66,7 +66,7 @@ function ProductsView() {
     return (
         <div style={{ marginTop: "12px", marginBottom: "85px" }}>
             <ListProducts listProducts={list} />
-            <PageNavigation length={Math.ceil(total / limit + 1)} selected={(skip / limit)} callback={onPageClick} />
+            <PageNavigation length={Math.ceil(total / limit)} selected={(skip / limit)} callback={onPageClick} />
         </div>
     );
 }
@@ -80,11 +80,13 @@ export function PageNavigation({ length, selected, callback, limitItems = 6 }) {
             </div>
         );
     }
-    const pos = ((selected + Math.ceil(limitItems / 2)) > length) ? (length - limitItems -1 ) : Math.max(selected - Math.floor(limitItems / 2), 0);
+    console.log(length);
+    const pos = ((selected + Math.ceil(limitItems / 2)) > length) ? (length - limitItems ) : Math.max(selected - Math.floor(limitItems / 2), 0);
     
     for (let i = pos; i < limitItems + pos + 1; i++) {
         let margin = (i !== limitItems + pos) ? "38px" : "0px";
         let color = (i !== selected) ? "#F9F1E7" : "#B88E2F";
+        if (i >= length) continue;
         if ((selected === (length - 2)) && ((i) === (limitItems + pos))) {
         } else {
             rows.push(

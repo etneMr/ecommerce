@@ -23,6 +23,16 @@ export const apiAuth = {
         }
         const url = AppConstant.baseUrl + 'auth/login';
         return await axios.post(url, params, config);
+    },
+
+    getUser: async (userId) => {
+        let config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const url = AppConstant.baseUrl + `users/${userId}`;
+        return await axios.get(url, config);
     }
 }
 

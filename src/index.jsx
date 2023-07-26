@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
-// import Home from './presentation/components/Home/Home';
-// import ErrorPage from './presentation/components/Error/Error';
 import { router } from './presentation/routes/index'
 import { Provider } from 'react-redux'
 import store from './presentation/redux/store';
@@ -22,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
     </React.StrictMode>
   </Provider>
 );

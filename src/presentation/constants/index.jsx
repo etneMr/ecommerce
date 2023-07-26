@@ -4,6 +4,7 @@ export * from './product-data';
 
 export const EToken = {
     xLimit: "xLimit",
+    xToken: "xToken",
     xlistCard: "xListCard"
 }
 
