@@ -37,6 +37,16 @@ export const apiAuth = {
 }
 
 export const apiCart = {
+    getAllCart: async (params, searchText) => {
+        if (searchText) {
+            const url = AppConstant.baseUrl + `carts/search?q=${searchText}`;
+            return await axios.get(url, params);
+        } else {
+            const url = AppConstant.baseUrl + 'carts';
+            return await axios.get(url, params);
+        }
+    },
+
     checkout: async (params) => {
         let config = {
             headers: {

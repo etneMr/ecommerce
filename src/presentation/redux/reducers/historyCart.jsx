@@ -1,20 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    limit: 3,
+    limit: 16,
     shortBy: 'default',
     total: 0,
     skip: 0,
     list: []
 }
 
-export const postSlice = createSlice({
-    name: 'post',
+export const historyCartSlice = createSlice({
+    name: 'historyCart',
     initialState: initialState,
     reducers: {
-        updateListPost: (state, action) => {
+        updateListhistoryCart: (state, action) => {
             let newState = state;
-            newState.list = action.payload.posts;
+            newState.list = action.payload.carts;
             newState.skip = action.payload.skip;
             newState.total = action.payload.total;
             state = newState;
@@ -23,6 +23,6 @@ export const postSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { updateListPost} = postSlice.actions
+export const { updateListhistoryCart} = historyCartSlice.actions
 
-export default postSlice.reducer
+export default historyCartSlice.reducer

@@ -4,6 +4,7 @@ import productReducer from './reducers/product';
 import cartReducer from './reducers/cart';
 import userReducer from './reducers/user';
 import postReducer from './reducers/post';
+import historyCartReducer from './reducers/historyCart';
 // ...
 
 const store = configureStore({
@@ -13,6 +14,7 @@ const store = configureStore({
         cart: cartReducer,
         user: userReducer,
         post: postReducer,
+        historyCart: historyCartReducer
     },
 })
 

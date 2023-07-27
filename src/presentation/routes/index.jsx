@@ -8,6 +8,7 @@ import Cart from '../components/Cart/Cart'
 import Checkout from '../components/Checkout/Checkout'
 import Login from '../components/Login/Login'
 import Blog from '../components/Blog/Blog'
+import HistoryCart from '../components/HistoryCart/HistoryCart'
 import { ProductComparison } from '../components/ProductComparison/Productcomparison'
 import {
     createBrowserRouter,
@@ -72,6 +73,11 @@ export const router = createBrowserRouter(
         {
             path: '/blog',
             element: <Blog />,
+            errorElement: <ErrorPage />
+        },
+        {
+            path: '/history-cart',
+            element: <HistoryCart />,
             errorElement: <ErrorPage />
         }
     ]
